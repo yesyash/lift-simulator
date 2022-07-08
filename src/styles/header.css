@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--white);
+    margin: 0 0.5rem 0 0;
+}
