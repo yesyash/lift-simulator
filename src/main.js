@@ -136,12 +136,12 @@ class FloorsList {
 
             targetLift = activeNode.value.lifts[0]
 
-            currNode.value.lifts.push(activeNode.value.lifts[0])
+            currNode.value.lifts.push(targetLift)
             activeNode.value.lifts.shift()
         }
 
 
-        geid(targetLift.id).style.transform = `translateY(${translateValue}px)`
+        animateLift(targetLift.id, translateValue)
     }
 }
 
@@ -168,6 +168,23 @@ const geid = (tag) => {
 
 const qs = (tag) => {
     return document.querySelector(tag)
+}
+
+const animateLift = (liftId, yAxis) => {
+    let intervalCall = 0
+    let lift = geid(liftId)
+    let liftDoors = lift.querySelectorAll('.lift__door')
+    lift.style.transform = `translateY(${yAxis}px)`
+
+
+    let interval = setInterval(() => {
+        if (intervalCall === 1) {
+            clearInterval(interval)
+        }
+
+        liftDoors.forEach(door => door.classList.toggle('open'))
+        intervalCall++
+    }, 2300)
 }
 
 
