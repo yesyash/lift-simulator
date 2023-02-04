@@ -242,11 +242,19 @@ addLiftBtn.addEventListener('click', () => {
     floorsController.addLift()
 })
 
-
-
 const handleFloorButton = (e) => {
     let id = e.currentTarget.id
     let type = e.currentTarget.dataset.type
 
     floorsController.findLift(id, type)
 }
+
+
+const getLiftToFreeze = (e) => {
+    e.preventDefault()
+    const formData = new FormData(e.target)
+    window.alert(formData.get("liftNumber"))
+}
+
+const disableLiftForm = document.querySelector('.disable_lift_form')
+disableLiftForm.addEventListener('submit', getLiftToFreeze)
