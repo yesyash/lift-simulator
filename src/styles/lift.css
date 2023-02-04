@@ -15,17 +15,11 @@ main {
     align-items: center;
     justify-content: end;
     gap: 1.5rem;
-    padding: 1.5rem 0;
 
     position: sticky;
     top: 0;
     left: 0;
     background: var(--bg-black);
-}
-
-.function_buttons button {
-    font-size: 1.125rem;
-    background: var(--neutral-800);
 }
 
 .floors_wrapper {
